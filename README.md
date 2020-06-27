@@ -2,10 +2,8 @@
 
 A typora theme using latex fonts to be used in academic work. See a demo of a generated pdf [here](demo/demo.pdf).
 
+## About this Fork
 
+对中文做了优化。
 
-![image_1](images/image_1.png)
-
-![image_2](images/image_2.png)
-
-![image_3](images/image_3.png)
+打印效果正文大概为“小四”宋体，间距20磅。

@@ -35,15 +35,17 @@
 }
 
 html, body, #write {
-	font-family: 'Computer Modern';
+	font-family: 'Times New Roman', 'Computer Modern', Times, serif;
 }
 
 h1, h2, h3, h4, h5, h6 {
-	font-family: 'Computer Modern';
+	font-family: 'Computer Modern', "PT Serif", 'Times New Roman', Times, serif;
 }
 
 h1 {
+	text-align: center;    /* 大标题居中 */
 	font-size: 2rem;
+	font-weight: bold;
 }
 
 h2 {
@@ -95,7 +97,7 @@ sup.md-footnote {
 }
 
 code, .md-fences, .sourceCode {
-	background: #f2f2f2;
+	background: #f8f8f8;
 }
 
 .md-fences, pre.sourceCode {
@@ -108,14 +110,20 @@ code, .md-fences, .sourceCode {
 }
 
 blockquote {
+	font-family: 'Courier New', Courier, monospace;
+	font-size: 0.8rem;
 	margin: 2rem .2rem;
 	padding: .3rem .5rem;
 	color: #6f6f6f;
-	border-left: .4rem solid gray;
+	border-left: 1px solid gray;
 }
 
 blockquote p {
 	padding: .2rem 1.5rem;
+	font-family: 'Courier New', Courier, monospace;
+	font-size: 0.8rem;
+	line-height: 1.6;
+	color: #4e4e4e;
 }
 
 mark {
@@ -140,6 +148,42 @@ img {
 	margin: auto;
 }
 
+/* GitHub Style Table */
+
+table {
+    padding: 0;
+    word-break: initial;
+}
+table tr {
+    border-top: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 0;
+}
+table tr:nth-child(2n),
+thead {
+    background-color: #f8f8f8;
+}
+table tr th {
+    font-weight: bold;
+    border: 1px solid #dfe2e5;
+    border-bottom: 0;
+    margin: 0;
+    padding: 6px 13px;
+}
+table tr td {
+    border: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 6px 13px;
+}
+table tr th:first-child,
+table tr td:first-child {
+    margin-top: 0;
+}
+table tr th:last-child,
+table tr td:last-child {
+    margin-bottom: 0;
+}
+
 /* 
     Print Mode and page breaks.
     WkhtmlToPDF does not work on @print mode
@@ -151,6 +195,10 @@ img {
 	}
 	html {
 		font-size: 16px;
+	}
+	p {
+		font-size: 16px;	/* 小四 */
+		line-height: 26px;	/* 20磅 */
 	}
 	div[title="pb"], page-break {
 		display: block;
@@ -170,10 +218,19 @@ img {
 		page-break-before: right;
 		break-before: recto;
 	}
+	h1 {
+		text-align: center;
+		font-weight: bold;
+	}
 	/* Override the previous ruleset for the very first heading: */
 	h1:first-of-type, section>h1:first-child {
 		page-break-before: avoid;
 		break-before: avoid;
+	}
+	/* Force second-level headings to begin in a new column or
+     possibly on a new page if it was in the last of multiple columns otherwise: */
+	h2 {
+		break-before: column;
 	}
 	/* Headings should not be the last paragraph on a page: */
 	h1, h2, h3, h4, h5, h6 {
