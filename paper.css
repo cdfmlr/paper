@@ -73,7 +73,7 @@ html {
 }
 
 body, #write {
-	max-width: 914px;
+	max-width: 640px; /* 稍大的左右页边距（打印出来的效果） */
 	text-align: justify;
 	display: block;
 	margin: auto;
